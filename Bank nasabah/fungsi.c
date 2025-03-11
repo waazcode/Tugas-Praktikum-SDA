@@ -138,3 +138,145 @@ void enqueue(Queue *queue, CharNode *nama, CharNode *layanan) {
         queue->rear->next = newNode;
         queue->rear = newNode;
     }
+    queue->size++;
+    printf(" Nasabah ");
+    printStringList(newNode->data.nama);
+    printf(" berhasil ditambahkan ke antrean dengan layanan ");
+    printStringList(newNode->data.layanan);
+    printf("\n");
+}
+
+// Menghapus nasabah dari antrean (Dequeue)
+Nasabah dequeue(Queue *queue) {
+    if (isQueueEmpty(queue)) {
+        printf("Antrean kosong, tidak ada nasabah untuk diproses\n");
+        Nasabah empty = {NULL, NULL};
+        return empty;
+    }
+    Node *temp = queue->front;
+    Nasabah nasabah = temp->data;
+    queue->front = queue->front->next;
+    if (queue->front == NULL) {
+        queue->rear = NULL;
+    }
+    free(temp);
+    queue->size--;
+    return nasabah;
+}
+
+// Menambah nasabah ke riwayat transaksi (Push)
+void push(Stack *stack, Nasabah nasabah) {
+    StackNode *newNode = (StackNode *)malloc(sizeof(StackNode));
+    if (newNode == NULL) {
+        printf("Alokasi memori gagal\n");
+        return;
+    }
+    newNode->data = nasabah;
+    newNode->next = stack->top;
+    stack->top = newNode;
+    stack->size++;
+}
+
+// Menghapus nasabah ke riwayat transakasi (Pop)
+Nasabah pop(Stack *stack) {
+    if (isStackEmpty(stack)) {
+        printf("Riwayat transaksi kosong\n");
+        Nasabah empty = {NULL, NULL};
+        return empty;
+    }
+    StackNode *temp = stack->top;
+    Nasabah nasabah = temp->data;
+    stack->top = stack->top->next;
+    free(temp); // membebaskan memori stackNode
+    stack->size--;
+    return nasabah;
+}
+
+// Menampilkan seluruh nasabah dalam antrean
+void displayQueue(Queue *queue) {
+    if (isQueueEmpty(queue)) {
+        printf("Antrean kosong\n");
+        return;
+    }
+    printf("\n+----+------------------------------------------------------+------------------------------+\n");
+    printf("| No.  | Nama Nasabah                                       | Layanan                      |\n");
+    printf("+------+----------------------------------------------------+------------------------------+\n");
+    Node *current = queue->front;
+    int count = 1;
+    while (current != NULL) {
+        char nama[14] = {0};
+        char layanan[20] = {0};
+
+        //konversi linked list ke string 
+        charListToString(current->data.nama, nama, 14);
+        charListToString(current->data.layanan, layanan, 20);
+
+        printf("| %-4d | %-50s | %-23s      |\n", count, nama,layanan);
+        current = current->next;
+        count++;
+    }
+    printf("+------+----------------------------------------------------+------------------------------+\n");
+    printf("Total nasabah dalam antrean: %d\n\n", queue->size);
+}
+
+// Menampilkan seluruh riwayat transaksi
+void displayStack(Stack *stack) {
+    if (isStackEmpty(stack)) {
+        printf("Riwayat transaksi kosong\n");
+        return;
+    }
+    printf("\n+----+------------------------------------------------------+------------------------------+\n");
+    printf("| No.  | Nama Nasabah                                       | Layanan                      |\n");
+    printf("+------+----------------------------------------------------+------------------------------+\n");
+    StackNode *current = stack->top;
+    int count = 1;
+    while (current != NULL) {
+            char nama[14] = {0};
+            char layanan[20] = {0};
+
+            charListToString(current->data.nama, nama, 14);
+            charListToString(current->data.layanan, layanan, 20);
+    
+            printf("| %-4d | %-50s | %-23s      |\n", count, nama,layanan);
+        current = current->next;
+        count++;
+    }
+    printf("+------+----------------+------------------------------------------------------------------+\n");
+    printf("Total riwayat transaksi: %d\n\n", stack->size);
+}
+
+// Membatalkan transaksi terakhir (undo)
+void undo(Queue *queue, Stack *stack) {
+    if (isStackEmpty(stack)) {
+        printf("Tidak ada transaksi untuk dibatalkan\n");
+        return;
+    }
+    Nasabah nasabah = pop(stack); // mengambil data nasabah terakhir dilayani
+    enqueue(queue, nasabah.nama, nasabah.layanan); // mengembalikan nasabah ke antrean
+    printf(" Transaksi terakhir: ");
+    printStringList(nasabah.nama);
+    printf(" - ");
+    printStringList(nasabah.layanan);
+    printf(" dibatalkan. Nasabah dikembalikan ke antrean.\n");
+}
+
+// Fungsi untuk memeriksa apakah input menu valid (hanya angka)
+int is_valid_number(const char *input) {
+    while (*input) {
+        if (!isdigit(*input)) {
+            return 0;
+        }
+        input++;
+    }
+    return 1;
+}
+
+// Fungsi untuk memfreekan seluruh linked list CharNode
+void freeCharList(CharNode *head) {
+    CharNode *current = head;
+    while (current != NULL) {
+        CharNode *temp = current;
+        current = current->next;
+        free(temp); // Membebaskan memori setiap node
+    }
+}
