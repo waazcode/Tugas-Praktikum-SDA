@@ -9,7 +9,7 @@ Anggota kelompok 2:
 6.	Teuku Rifqi Zeta_2408107010071
 
    
-SISTEM ANTREAN BANK SEDERHANA
+## SISTEM ANTREAN BANK SEDERHANA
 
 Program ini merupakan implementasi sistem antrean bank menggunakan bahasa pemrograman C dengan struktur data Queue (Linked List) untuk antrean nasabah dan Stack (Linked List) untuk riwayat layanan. Program ini menyediakan fitur untuk menambah, memproses, menampilkan antrean, melihat riwayat layanan, serta membatalkan transaksi terakhir. Sistem antrean bank ini dirancang untuk mengelola antrean nasabah secara efisien agar layanan di bank dapat berjalan lebih tertata dan cepat. Berikut adalah tujuan utama dari sistem ini:
 1.	Mengelola Antrean Nasabah dengan Efisien
@@ -23,7 +23,7 @@ Mengurangi risiko kelalaian manusia dalam mencatat urutan nasabah. Jika terjadi 
 5.	Meningkatkan Kepuasan Nasabah
 Nasabah dapat melihat antrean yang jelas dan mengetahui urutan mereka dalam layanan. Memastikan keadilan dalam pelayanan, karena nasabah yang datang lebih awal akan diproses lebih dulu.
 
-PENJELASAN SETIAP FILE:
+## PENJELASAN SETIAP FILE:
 1.	Header.h : File untuk mendefinisikan beberapa struktur data yang digunakan untuk mengelola elemen-elemen dalam bentuk linked list, queue, dan stack untuk aplikasi yang berhubungan dengan data nasabah.
 2.	Main.c  : Fungsi main yang merupakan implementasi dari sistem antrean bank yang menggunakan struktur data queue (antrian) dan stack (tumpukan). Berikut adalah penjelasan rinci tentang fungsi ini:
 initializeQueue(&antreanNasabah): Menginisialisasi antrean kosong. 
@@ -59,38 +59,36 @@ is_valid_number(const char *input): Memeriksa apakah input hanya terdiri dari an
 freeCharList(CharNode *head): Membebaskan memori yang digunakan oleh linked list CharNode.
 4.	Makefile : File yang membantu mengelola sistem dengan banyak file sumber secara otomatis, sehingga mempermudah pengembang untuk kompilasi ulang hanya pada bagian yang berubah. Makefile ini digunakan untuk mengompilasi program dengan efisien menggunakan gcc.
 
-INSTRUKSI KOMPILASI DAN CARA MENJALANKAN PROGRAM
+## INSTRUKSI KOMPILASI DAN CARA MENJALANKAN PROGRAM
 1.	  Jalankan make untuk mengkompilasi dan menghasilkan file output. 
 2.	  Jalankan program dengan .\main. 
 3.	  Bersihkan file objek menggunakan make clean.
 
-SCREENSHOT HASIL EKSEKUSI PROGRAM
+## SCREENSHOT HASIL EKSEKUSI PROGRAM
 
-
-
-
+### 1.	Antarmuka Program
 ![Image](https://github.com/user-attachments/assets/bb8029a7-ad66-4f3b-8d25-94252aa2b382)
 
-
+### 2.	Tambah nasabah ke antrean
 ![Image](https://github.com/user-attachments/assets/75111144-f950-4b10-84f0-051b4b595078)
 
-
+### 3.	Menampilkan Antrean
 ![Image](https://github.com/user-attachments/assets/2f2ff94a-a89b-4ebb-bad0-e0c0fe0fe31d)
 
-
+### 4.	Memproses Nasabah
 ![Image](https://github.com/user-attachments/assets/a4fe65a3-d760-4d9d-b2f3-93831882874a)
 
-
+### 5.	Membatalkan Transaksi (Undo)
 ![Image](https://github.com/user-attachments/assets/17c0671b-f873-4b84-bff3-83536c968eeb)
 
-
+### 6.	Menampilkan Riwayat layanan
 ![Image](https://github.com/user-attachments/assets/a39ea1e9-bbcd-40c0-aea5-0b2c7d6f3205)
 
-
+### 7.	Keluar dari program
 ![Image](https://github.com/user-attachments/assets/5bc8c22c-ea42-4229-8106-e72b5a749a22)
 
 
-KENDALA DAN SOLUSI SELAMA PENGEMBANGAN
+## KENDALA DAN SOLUSI SELAMA PENGEMBANGAN
 1.	Penggunaan string dalam linkedlist
 Masalah : Mengelola string yang disimpan dalam linked list bisa menjadi rumit, karena harus memperhatikan pemisahan dan penyalinan data.
 Solusi : Gunakan fungsi khusus untuk mengonversi linked list menjadi string dan pastikan panjang string tidak melebihi batas yang ditentukan.
