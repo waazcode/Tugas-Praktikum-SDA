@@ -43,3 +43,54 @@ typedef struct Stack {
     StackNode *top; // pointer ke elemen teratas stack
     unsigned size; // ukuran Stack
 } Stack;
+
+// Inisialisasi Queue
+void initializeQueue(Queue *queue);
+
+// Inisialisai Stack
+void initializeStack(Stack *stack);
+// Memeriksa apakah Queue kosong 
+bool isQueueEmpty(Queue *queue);
+
+// Memeriksa apakah Stack kosong
+bool isStackEmpty(Stack *stack);
+
+// Fungsi untuk membuat linked list dari string
+CharNode* createStringList(const char *str); 
+
+//fungsi untuk memvalidasi nama(hanya huruf dan spasi)
+bool isValidName(const char *input);
+
+// Fungsi untuk membaca input dan menyimpannya dalam linked list
+CharNode* readInput();
+
+//fungsi untuk mencetak linked list string
+void charListToString(CharNode *head, char *str, int maxLength);
+
+// Menambahkan nasabah ke antrean (Enqueue)
+void enqueue(Queue *queue, CharNode *nama, CharNode *layanan);
+
+// Menambah nasabah ke riwayat transaksi (Push)
+void push(Stack *stack, Nasabah nasabah); 
+
+// Menghapus nasabah ke riwayat transakasi (Pop)
+Nasabah pop(Stack *stack);
+
+// Menampilkan seluruh nasabah dalam antrean
+void displayQueue(Queue *queue);
+
+// Menampilkan seluruh riwayat transaksi
+void displayStack(Stack *stack);
+
+// Membatalkan transaksi terakhir (undo)
+void undo(Queue *queue, Stack *stack);
+
+// Fungsi untuk memeriksa apakah input menu valid (hanya angka)
+int is_valid_number(const char *input);
+
+// Fungsi untuk memfreekan seluruh linked list CharNode
+void freeCharList(CharNode *head); 
+
+Nasabah dequeue(Queue *queue);
+
+#endif
