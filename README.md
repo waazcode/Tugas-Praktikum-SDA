@@ -57,6 +57,6 @@ displayStack(Stack *stack): Menampilkan semua riwayat transaksi dalam stack deng
 undo(Queue *queue, Stack *stack): Membatalkan transaksi terakhir dengan memindahkan nasabah dari stack kembali ke antrean.
 is_valid_number(const char *input): Memeriksa apakah input hanya terdiri dari angka.
 freeCharList(CharNode *head): Membebaskan memori yang digunakan oleh linked list CharNode.
-
+4.	Makefile : File yang membantu mengelola sistem dengan banyak file sumber secara otomatis, sehingga mempermudah pengembang untuk kompilasi ulang hanya pada bagian yang berubah. Makefile ini digunakan untuk mengompilasi program dengan efisien menggunakan gcc. 
 
 
