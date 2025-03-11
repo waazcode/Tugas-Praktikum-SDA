@@ -74,3 +74,72 @@ int main() {
                     freeCharList(nama);
                     continue;
                 }
+
+                CharNode *layanan = NULL;
+                switch (jenisLayanan) {
+                    case 1: 
+                        layanan = createStringList("Setor Tunai");
+                        break;
+                    case 2: 
+                        layanan = createStringList("Tarik Tunai");
+                        break;
+                    case 3:
+                        layanan = createStringList("Pembukaan Rekening");
+                        break;
+                    default:
+                        printf("Pilihan tidak valid\n");
+                        freeCharList(nama); // Membersihkan memori jika pilihan tidak valid
+                        continue;
+                }
+
+                enqueue(&antreanNasabah, nama, layanan);
+                break;
+            }
+
+            case 2:
+                if (isQueueEmpty(&antreanNasabah)) {
+                    printf("Antrean kosong, tidak ada nasabah untuk diproses\n");    
+                } else {
+                    Nasabah nasabah = dequeue(&antreanNasabah);
+                    push(&riwayatTransaksi, nasabah);
+                    printf(" Layanan selesai diproses dan dipindahkan ke riwayat\n");
+                }
+                break;
+
+            case 3:
+                displayQueue(&antreanNasabah);
+                break;
+
+            case 4:
+                displayStack(&riwayatTransaksi);
+                break;
+
+            case 5:
+                undo(&antreanNasabah, &riwayatTransaksi);
+                break;
+            
+            case 6:
+                printf("\nTerima kasih telah menggunakan sistem antrean bank\n");
+                break;
+
+            default:
+                printf("Pilihan tidak valid. Harap masukkan angka antara 1 hingga 3\n");
+        }   
+    } while (pilihan != 6);
+
+    // Membersihkan memori yang tersisa
+    while (!isQueueEmpty(&antreanNasabah)) {
+        Nasabah nasabah= dequeue(&antreanNasabah);
+        freeCharList(nasabah.nama);
+        freeCharList(nasabah.layanan);
+    }
+
+    while (!isStackEmpty(&riwayatTransaksi)) {
+        Nasabah nasabah = pop(&riwayatTransaksi);
+        freeCharList(nasabah.nama);
+        freeCharList(nasabah.layanan);
+    }
+
+    return 0;   
+}
+
