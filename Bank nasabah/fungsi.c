@@ -280,11 +280,3 @@ void freeCharList(CharNode *head) {
         free(temp); // Membebaskan memori setiap node
     }
 }
-    
-    
-       
-    
-    
-            
-
-
