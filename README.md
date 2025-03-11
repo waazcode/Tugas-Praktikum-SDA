@@ -38,6 +38,25 @@ displayQueue(&antreanNasabah): Menampilkan semua nasabah dalam antrean.
 displayStack(&riwayatTransaksi): Menampilkan riwayat transaksi dalam stack. 
 undo(&antreanNasabah, &riwayatTransaksi): Membatalkan transaksi terakhir (mengembalikan nasabah ke antrean). 
 freeCharList(): Membebaskan memori yang digunakan oleh linked list untuk nama dan layanan.
+3.	FungsiNasabah.c : File ini berisi berbagai fungsi yang berhubungan dengan sistem antrean dan riwayat transaksi nasabah dalam sebuah bank. Fungsi-fungsi ini menggunakan struktur data seperti Queue (antrean) dan Stack (riwayat transaksi) yang didefinisikan di dalam header file sebelumnya.Berikut penjelasan masing-masing fungsinya:
+initializeQueue(Queue *queue): Menginisialisasi antrean dengan front dan rear ke NULL dan ukuran menjadi 0.
+initializeStack(Stack *stack): Menginisialisasi stack dengan top ke NULL dan ukuran menjadi 0.
+isQueueEmpty(Queue *queue): Memeriksa apakah antrean kosong dengan mengecek apakah front adalah NULL.
+isStackEmpty(Stack *stack): Memeriksa apakah stack kosong dengan mengecek apakah top adalah NULL.
+createStringList(const char *str): Mengonversi string biasa menjadi linked list karakter dan mengembalikan kepala linked list.
+isValidName(const char *input): Memeriksa apakah string hanya berisi huruf dan spasi, mengembalikan true jika valid.
+readInput(): Membaca input nama dari pengguna, memvalidasinya, dan mengonversinya menjadi linked list karakter.
+printStringList(CharNode *head): Mencetak karakter-karakter dalam linked list satu per satu hingga mencapai NULL.
+charListToString(CharNode *head, char *str, int maxLength): Mengonversi linked list karakter ke dalam string dengan panjang maksimal maxLength.
+enqueue(Queue *queue, CharNode *nama, CharNode *layanan): Menambahkan nasabah ke antrean dengan menyimpan nama dan layanan dalam linked list.
+dequeue(Queue *queue): Menghapus nasabah dari antrean dan mengembalikan data nasabah yang ada di depan antrean.
+push(Stack *stack, Nasabah nasabah): Menambahkan nasabah ke dalam stack (riwayat transaksi) dengan menambahkan node baru di atas stack.
+pop(Stack *stack): Menghapus dan mengembalikan nasabah dari atas stack, serta mengurangi ukuran stack.
+displayQueue(Queue *queue): Menampilkan semua nasabah dalam antrean dengan nama dan layanan yang terdaftar.
+displayStack(Stack *stack): Menampilkan semua riwayat transaksi dalam stack dengan nama dan layanan yang terdaftar.
+undo(Queue *queue, Stack *stack): Membatalkan transaksi terakhir dengan memindahkan nasabah dari stack kembali ke antrean.
+is_valid_number(const char *input): Memeriksa apakah input hanya terdiri dari angka.
+freeCharList(CharNode *head): Membebaskan memori yang digunakan oleh linked list CharNode.
 
 
 
