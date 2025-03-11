@@ -65,12 +65,28 @@ INSTRUKSI KOMPILASI DAN CARA MENJALANKAN PROGRAM
 3.	  Bersihkan file objek menggunakan make clean.
 
 SCREENSHOT HASIL EKSEKUSI PROGRAM
+
+
+
+
 ![Image](https://github.com/user-attachments/assets/bb8029a7-ad66-4f3b-8d25-94252aa2b382)
+
+
 ![Image](https://github.com/user-attachments/assets/75111144-f950-4b10-84f0-051b4b595078)
+
+
 ![Image](https://github.com/user-attachments/assets/2f2ff94a-a89b-4ebb-bad0-e0c0fe0fe31d)
+
+
 ![Image](https://github.com/user-attachments/assets/a4fe65a3-d760-4d9d-b2f3-93831882874a)
+
+
 ![Image](https://github.com/user-attachments/assets/17c0671b-f873-4b84-bff3-83536c968eeb)
+
+
 ![Image](https://github.com/user-attachments/assets/a39ea1e9-bbcd-40c0-aea5-0b2c7d6f3205)
+
+
 ![Image](https://github.com/user-attachments/assets/5bc8c22c-ea42-4229-8106-e72b5a749a22)
 
 
