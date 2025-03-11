@@ -25,5 +25,19 @@ Nasabah dapat melihat antrean yang jelas dan mengetahui urutan mereka dalam laya
 
 PENJELASAN SETIAP FILE:
 1.	Header.h : File untuk mendefinisikan beberapa struktur data yang digunakan untuk mengelola elemen-elemen dalam bentuk linked list, queue, dan stack untuk aplikasi yang berhubungan dengan data nasabah.
+2.	Main.c  : Fungsi main yang merupakan implementasi dari sistem antrean bank yang menggunakan struktur data queue (antrian) dan stack (tumpukan). Berikut adalah penjelasan rinci tentang fungsi ini:
+initializeQueue(&antreanNasabah): Menginisialisasi antrean kosong. 
+initializeStack(&riwayatTransaksi): Menginisialisasi stack kosong. 
+is_valid_number(input): Memeriksa apakah input yang diberikan berupa angka. 
+readInput(): Membaca input dan mengubahnya menjadi linked list untuk nama. 
+createStringList(str): Membuat linked list dari string yang diberikan (untuk layanan). 
+enqueue(&antreanNasabah, nama, layanan): Menambahkan nasabah ke antrean. 
+dequeue(&antreanNasabah): Mengambil nasabah dari antrean. 
+push(&riwayatTransaksi, nasabah): Menambahkan nasabah ke stack (untuk riwayat transaksi). 
+displayQueue(&antreanNasabah): Menampilkan semua nasabah dalam antrean. 
+displayStack(&riwayatTransaksi): Menampilkan riwayat transaksi dalam stack. 
+undo(&antreanNasabah, &riwayatTransaksi): Membatalkan transaksi terakhir (mengembalikan nasabah ke antrean). 
+freeCharList(): Membebaskan memori yang digunakan oleh linked list untuk nama dan layanan.
+
 
 
