@@ -17,7 +17,7 @@ typedef struct CharNode {
 typedef struct Nasabah {
     CharNode *nama; // linked list untuk nama 
     CharNode *layanan; // linked list untuk layanan
-} Nasabah;
+} Nasabah; 
 
 // Struktur Node untuk Queue
 typedef struct Node {
