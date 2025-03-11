@@ -90,3 +90,17 @@ SCREENSHOT HASIL EKSEKUSI PROGRAM
 ![Image](https://github.com/user-attachments/assets/5bc8c22c-ea42-4229-8106-e72b5a749a22)
 
 
+KENDALA DAN SOLUSI SELAMA PENGEMBANGAN
+1.	Penggunaan string dalam linkedlist
+Masalah : Mengelola string yang disimpan dalam linked list bisa menjadi rumit, karena harus memperhatikan pemisahan dan penyalinan data.
+Solusi : Gunakan fungsi khusus untuk mengonversi linked list menjadi string dan pastikan panjang string tidak melebihi batas yang ditentukan.
+2.	Komunikasi Antara Queue dan Stack
+Masalah: Memindahkan nasabah dari antrean ke riwayat transaksi (Stack) dan sebaliknya (undo) bisa menjadi rumit jika tidak menangani data dengan hati-hati, terutama jika ada banyak nasabah.
+Solusi: Pastikan data yang dipindahkan dari antrean ke riwayat transaksi tidak hilang dan dapat dibatalkan dengan benar jika diperlukan.
+3.	Menangani Input Nama yang Panjang
+Masalah: Nama nasabah yang panjang dapat menyebabkan buffer overflow atau kesalahan alokasi memori saat mengonversi nama ke dalam linked list.
+Solusi: Tentukan batas panjang input yang lebih aman. Gunakan fungsi fgets() untuk mencegah buffer overflow.
+
+
+
+
