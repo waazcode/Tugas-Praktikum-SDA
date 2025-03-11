@@ -66,9 +66,10 @@ INSTRUKSI KOMPILASI DAN CARA MENJALANKAN PROGRAM
 
 SCREENSHOT HASIL EKSEKUSI PROGRAM
 1.	Antarmuka Program
-https://github.com/user-attachments/assets/bb8029a7-ad66-4f3b-8d25-94252aa2b382
+ ![Image](https://github.com/user-attachments/assets/bb8029a7-ad66-4f3b-8d25-94252aa2b382)
 2.	Tambah nasabah ke antrean
-https://github.com/user-attachments/assets/75111144-f950-4b10-84f0-051b4b595078
+![Image](https://github.com/user-attachments/assets/75111144-f950-4b10-84f0-051b4b595078)
 3.	Menampilkan Antrean
-https://github.com/user-attachments/assets/2f2ff94a-a89b-4ebb-bad0-e0c0fe0fe31d
+![Image](https://github.com/user-attachments/assets/2f2ff94a-a89b-4ebb-bad0-e0c0fe0fe31d)
+
 
