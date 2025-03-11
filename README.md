@@ -22,3 +22,8 @@ Dengan sistem ini, petugas tidak perlu mencatat antrean secara manual. Petugas d
 Mengurangi risiko kelalaian manusia dalam mencatat urutan nasabah. Jika terjadi kesalahan dalam pemrosesan layanan, fitur Undo (Pembatalan Transaksi Terakhir) dapat digunakan untuk mengembalikan nasabah ke antrean.
 5.	Meningkatkan Kepuasan Nasabah
 Nasabah dapat melihat antrean yang jelas dan mengetahui urutan mereka dalam layanan. Memastikan keadilan dalam pelayanan, karena nasabah yang datang lebih awal akan diproses lebih dulu.
+
+PENJELASAN SETIAP FILE:
+1.	Header.h : File untuk mendefinisikan beberapa struktur data yang digunakan untuk mengelola elemen-elemen dalam bentuk linked list, queue, dan stack untuk aplikasi yang berhubungan dengan data nasabah.
+
+
